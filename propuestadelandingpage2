@@ -1,0 +1,741 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=IM+Fell+English:ital@0;1&display=swap');
+
+  .lp-root {
+    font-family: 'Inter', sans-serif;
+    background: #0A0A0A;
+    color: #E8E6E0;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .lp-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+    border-bottom: 0.5px solid #222;
+    position: sticky;
+    top: 0;
+    background: #0A0A0A;
+    z-index: 10;
+  }
+
+  .lp-logo {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: #888;
+    text-transform: uppercase;
+  }
+
+  .lp-nav-cta {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #C8A96E;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0.5px solid #C8A96E;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .lp-nav-cta:hover { background: rgba(200,169,110,0.1); }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #C8A96E;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 6rem 2.5rem 5rem;
+    border-bottom: 0.5px solid #1a1a1a;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-headline {
+    font-family: 'IM Fell English', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #F0EDE6;
+    margin: 0 0 2rem;
+    max-width: 700px;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: #C8A96E;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: #888;
+    max-width: 520px;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .hero-filter {
+    font-size: 12px;
+    color: #444;
+    border-left: 1px solid #333;
+    padding-left: 1rem;
+    margin-bottom: 3rem;
+    font-style: italic;
+    max-width: 480px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: #C8A96E;
+    color: #0A0A0A;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    border: none;
+  }
+  .cta-btn:hover { opacity: 0.85; }
+
+  .cta-secondary {
+    display: inline-block;
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-left: 2rem;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #333;
+    vertical-align: middle;
+  }
+
+  /* DIVIDER */
+  .divider-line {
+    border: none;
+    border-top: 0.5px solid #1a1a1a;
+    margin: 0;
+  }
+
+  /* AGITATION */
+  .agitation {
+    padding: 5rem 2.5rem;
+    border-bottom: 0.5px solid #1a1a1a;
+  }
+
+  .agitation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    margin-top: 3rem;
+    border: 0.5px solid #1e1e1e;
+  }
+
+  .agitation-item {
+    padding: 2rem 1.75rem;
+    border-right: 0.5px solid #1e1e1e;
+    border-bottom: 0.5px solid #1e1e1e;
+  }
+  .agitation-item:nth-child(2n) { border-right: none; }
+
+  .agitation-number {
+    font-size: 10px;
+    color: #333;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .agitation-fear {
+    font-size: 14px;
+    color: #B0ACA4;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .agitation-fear strong {
+    display: block;
+    color: #E0DDD6;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 0.5rem;
+  }
+
+  .agitation-close {
+    margin-top: 3rem;
+    padding: 2rem;
+    border: 0.5px solid #1e1e1e;
+    font-family: 'IM Fell English', serif;
+    font-size: 1.3rem;
+    color: #888;
+    font-style: italic;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  .agitation-close span { color: #E0DDD6; }
+
+  /* PARADIGM SHIFT */
+  .paradigm {
+    padding: 5rem 2.5rem;
+    border-bottom: 0.5px solid #1a1a1a;
+  }
+
+  .paradigm-intro {
+    font-size: 15px;
+    color: #666;
+    max-width: 580px;
+    margin-bottom: 3rem;
+    line-height: 1.75;
+  }
+
+  .paradigm-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #1a1a1a;
+    border: 0.5px solid #1a1a1a;
+    margin-bottom: 3rem;
+  }
+
+  .paradigm-col {
+    padding: 2rem;
+    background: #0A0A0A;
+  }
+
+  .paradigm-col-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  .col-old .paradigm-col-label { color: #442211; }
+  .col-new .paradigm-col-label { color: #C8A96E; }
+
+  .paradigm-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .paradigm-list li {
+    font-size: 13px;
+    color: #666;
+    padding: 0.6rem 0;
+    border-bottom: 0.5px solid #141414;
+    line-height: 1.5;
+  }
+  .col-new .paradigm-list li { color: #A8A49C; }
+
+  .paradigm-statement {
+    font-size: 17px;
+    color: #C8A96E;
+    font-weight: 300;
+    max-width: 600px;
+    line-height: 1.7;
+    padding: 2rem;
+    border: 0.5px solid #2a1f0f;
+    background: #0d0b08;
+  }
+
+  /* AUTHORITY */
+  .authority {
+    padding: 5rem 2.5rem;
+    border-bottom: 0.5px solid #1a1a1a;
+  }
+
+  .authority-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-top: 3rem;
+    align-items: start;
+  }
+
+  .authority-aside {
+    border: 0.5px solid #1e1e1e;
+    padding: 2rem;
+  }
+
+  .authority-name {
+    font-family: 'IM Fell English', serif;
+    font-size: 1.6rem;
+    color: #E0DDD6;
+    margin: 0 0 0.25rem;
+  }
+
+  .authority-title {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .authority-stat {
+    padding: 1rem 0;
+    border-top: 0.5px solid #1a1a1a;
+  }
+  .authority-stat-num {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #C8A96E;
+    display: block;
+  }
+  .authority-stat-label {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.1em;
+  }
+
+  .authority-copy p {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.8;
+    margin: 0 0 1.25rem;
+    font-weight: 300;
+  }
+  .authority-copy p strong {
+    color: #C0BCB4;
+    font-weight: 500;
+  }
+
+  .authority-modules {
+    margin-top: 2rem;
+    border: 0.5px solid #1e1e1e;
+  }
+
+  .module-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 0.5px solid #141414;
+  }
+  .module-item:last-child { border-bottom: none; }
+
+  .module-num {
+    font-size: 10px;
+    color: #333;
+    min-width: 20px;
+    padding-top: 2px;
+  }
+
+  .module-text strong {
+    display: block;
+    font-size: 13px;
+    color: #C0BCB4;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+  .module-text span {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  /* FILTER */
+  .filter {
+    padding: 5rem 2.5rem;
+    border-bottom: 0.5px solid #1a1a1a;
+    background: #050505;
+  }
+
+  .filter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .filter-col-not, .filter-col-yes {
+    padding: 2rem;
+    border: 0.5px solid #1e1e1e;
+  }
+
+  .filter-col-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  .filter-col-not .filter-col-label { color: #5a2020; }
+  .filter-col-yes .filter-col-label { color: #C8A96E; }
+
+  .filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .filter-list li {
+    font-size: 13px;
+    padding: 0.7rem 0;
+    border-bottom: 0.5px solid #141414;
+    line-height: 1.5;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .filter-list li:last-child { border-bottom: none; }
+
+  .filter-col-not .filter-list li { color: #5a4040; }
+  .filter-col-yes .filter-list li { color: #888; }
+
+  .filter-icon-no { color: #3a1515; font-size: 16px; min-width: 16px; }
+  .filter-icon-yes { color: #C8A96E; font-size: 16px; min-width: 16px; }
+
+  .filter-statement {
+    margin-top: 3rem;
+    font-size: 13px;
+    color: #444;
+    font-style: italic;
+    max-width: 500px;
+    line-height: 1.7;
+  }
+
+  /* CTA FINAL */
+  .final-cta {
+    padding: 6rem 2.5rem;
+    text-align: center;
+    background: #0A0A0A;
+  }
+
+  .final-cta-pre {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+
+  .final-headline {
+    font-family: 'IM Fell English', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: #E0DDD6;
+    margin: 0 0 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .final-sub {
+    font-size: 14px;
+    color: #555;
+    max-width: 420px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+  }
+
+  .final-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .final-disclaimer {
+    font-size: 11px;
+    color: #333;
+    max-width: 400px;
+    line-height: 1.6;
+  }
+
+  .footer {
+    padding: 2rem 2.5rem;
+    border-top: 0.5px solid #141414;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy {
+    font-size: 11px;
+    color: #333;
+    letter-spacing: 0.1em;
+  }
+  .footer-disclaimer {
+    font-size: 10px;
+    color: #2a2a2a;
+    max-width: 320px;
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  .section-rule {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .section-rule-line {
+    height: 0.5px;
+    background: #C8A96E;
+    width: 32px;
+  }
+
+  @media (max-width: 600px) {
+    .authority-layout { grid-template-columns: 1fr; }
+    .filter-grid { grid-template-columns: 1fr; }
+    .paradigm-columns { grid-template-columns: 1fr; }
+    .agitation-item:nth-child(2n) { border-right: 0.5px solid #1e1e1e; }
+  }
+</style>
+
+<div class="lp-root">
+
+  <nav class="lp-nav">
+    <span class="lp-logo">Luis Feliz Caballero</span>
+    <a class="lp-nav-cta" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Solicitar Acceso</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Mentoría Privada · Forex · Acceso Restringido</p>
+    <h1 class="hero-headline">
+      El prisionero mejor pagado<br>
+      <em>ya puede comprar su libertad.</em>
+    </h1>
+    <p class="hero-sub">
+      Una transferencia directa de habilidades diseñada para ejecutivos y dueños de negocio que entienden que la verdadera autonomía no se negocia — se construye sobre una habilidad matemática, silenciosa y probada.
+    </p>
+    <p class="hero-filter">
+      Esto no es un curso de trading. No es para todo el mundo. Si llevas camisa cara pero sigues dependiendo de alguien para sobrevivir el mes, esta página es para ti.
+    </p>
+    <div>
+      <a class="cta-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Ver la presentación</a>
+      <span class="cta-secondary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Quién es Luis →</span>
+    </div>
+  </section>
+
+  <!-- AGITATION: EL ESPEJO PSICOLÓGICO -->
+  <section class="agitation">
+    <div class="section-rule">
+      <span class="section-rule-line"></span>
+      <span class="section-label" style="margin-bottom:0">El espejo psicológico</span>
+    </div>
+    <h2 style="font-family:'IM Fell English',serif; font-size:clamp(1.4rem,3vw,2rem); color:#D0CCC4; font-weight:400; max-width:620px; line-height:1.3; margin:0 0 0.75rem;">Sabemos exactamente lo que pasa en tu cabeza a las 3 de la mañana.</h2>
+    <p style="font-size:14px; color:#555; max-width:500px; margin:0; line-height:1.7;">No porque seamos adivinos. Sino porque cualquier persona inteligente que llegó hasta aquí lo piensa.</p>
+
+    <div class="agitation-grid">
+      <div class="agitation-item">
+        <span class="agitation-number">01</span>
+        <div class="agitation-fear">
+          <strong>"Si paro, todo se cae"</strong>
+          Tu negocio no te da libertad. Te esclavizó de una forma más sofisticada. El mes que dejas de pedalear, el castillo de naipes se derrumba. Y tú lo sabes.
+        </div>
+      </div>
+      <div class="agitation-item">
+        <span class="agitation-number">02</span>
+        <div class="agitation-fear">
+          <strong>"Gano bien. Pero no tengo nada."</strong>
+          Buena cuenta de banco. Cero activos que trabajen sin ti. Cada dólar que llega, sale dependiendo de tu presencia, tu tiempo o tu humor.
+        </div>
+      </div>
+      <div class="agitation-item" style="border-bottom:none;">
+        <span class="agitation-number">03</span>
+        <div class="agitation-fear">
+          <strong>"Los gurús me revuelven el estómago"</strong>
+          Lamborghinis alquilados. Pantallas con números verdes. "Gané $10K hoy." Tu radar de bullshit está calibrado al milímetro. Y tiene razón.
+        </div>
+      </div>
+      <div class="agitation-item" style="border-bottom:none; border-right:none;">
+        <span class="agitation-number">04</span>
+        <div class="agitation-fear">
+          <strong>"Siento que soy el único adulto en la sala"</strong>
+          Tus empleados, tus socios, tus clientes — todos jalan de ti. Y en silencio te preguntas: ¿hay alguna forma de que esto funcione sin mí al frente?
+        </div>
+      </div>
+    </div>
+
+    <blockquote class="agitation-close">
+      "No necesitas motivación. Necesitas un sistema que genere capital mientras duermes, <span>sin clientes, sin empleados, sin depender de nadie.</span>"
+    </blockquote>
+  </section>
+
+  <!-- PARADIGM SHIFT -->
+  <section class="paradigm">
+    <div class="section-rule">
+      <span class="section-rule-line"></span>
+      <span class="section-label" style="margin-bottom:0">El cambio de paradigma</span>
+    </div>
+    <h2 style="font-family:'IM Fell English',serif; font-size:clamp(1.4rem,3vw,2rem); color:#D0CCC4; font-weight:400; max-width:580px; line-height:1.3; margin:0 0 1.5rem;">Forex no es lo que te vendieron.</h2>
+    <p class="paradigm-intro">
+      No es adrenalina. No es pantallas con velas japonesas. No es un Lamborghini en Dubai. Es un mercado de 7.5 billones de dólares diarios que se mueve por matemáticas y probabilidad — y que no cierra los domingos, no pide vacaciones y no tiene síndrome de burnout.
+    </p>
+
+    <div class="paradigm-columns">
+      <div class="paradigm-col col-old">
+        <span class="paradigm-col-label">Lo que te vendieron</span>
+        <ul class="paradigm-list">
+          <li>Cursos para "aprender trading paso a paso"</li>
+          <li>Señales de grupos de Telegram</li>
+          <li>Lifestyle de guru con screenshots</li>
+          <li>Promesas de resultados en 30 días</li>
+          <li>Motivación empaquetada en videos</li>
+        </ul>
+      </div>
+      <div class="paradigm-col col-new">
+        <span class="paradigm-col-label">Lo que esto es en realidad</span>
+        <ul class="paradigm-list">
+          <li>Una habilidad quirúrgica de extracción de capital</li>
+          <li>Un sistema matemático, documentado y reproducible</li>
+          <li>Independencia de clientes, empleados y mercados locales</li>
+          <li>Un activo que opera contigo o sin ti</li>
+          <li>Control sobre tu tiempo, no solo sobre tu dinero</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="paradigm-statement">
+      El objetivo no es convertirte en trader. El objetivo es que tengas una segunda economía —fría, aburrida y consistente— que opere en paralelo a tu vida mientras tú haces lo que ya haces bien.
+    </div>
+  </section>
+
+  <!-- AUTHORITY -->
+  <section class="authority" id="about">
+    <div class="section-rule">
+      <span class="section-rule-line"></span>
+      <span class="section-label" style="margin-bottom:0">La autoridad</span>
+    </div>
+    <h2 style="font-family:'IM Fell English',serif; font-size:clamp(1.4rem,3vw,2rem); color:#D0CCC4; font-weight:400; max-width:600px; line-height:1.3; margin:0;">No es un coach. Es un francotirador que te va a transferir la habilidad, no la inspiración.</h2>
+
+    <div class="authority-layout">
+      <aside class="authority-aside">
+        <p class="authority-name">Luis Feliz<br>Caballero</p>
+        <p class="authority-title">Operador de Forex · Puerto Rico</p>
+        <div class="authority-stat">
+          <span class="authority-stat-num">+$20M</span>
+          <span class="authority-stat-label">Gestionados en 3 años</span>
+        </div>
+        <div class="authority-stat">
+          <span class="authority-stat-num">#1</span>
+          <span class="authority-stat-label">Referente de Forex en PR</span>
+        </div>
+        <div class="authority-stat">
+          <span class="authority-stat-num">Privado</span>
+          <span class="authority-stat-label">Mentorías con plazas contadas</span>
+        </div>
+      </aside>
+
+      <div class="authority-copy">
+        <p>Luis Feliz Caballero no vende esperanza. <strong>Opera mercados en vivo, con capital real, en condiciones reales.</strong> Lo que enseña no lo sacó de un libro — lo construyó dentro de posiciones abiertas cuando el mercado no le debía ningún favor.</p>
+
+        <p>Ha gestionado más de veinte millones de dólares en tres años. Eso no es un número de marketing. Es un historial de ejecución que se puede auditar. <strong>Esa es la diferencia entre un instructor y un operador.</strong></p>
+
+        <p>Su modelo de mentoría no es académico. Es una transferencia directa del sistema exacto que usa cuando opera: las entradas, los filtros, la gestión del riesgo, la psicología de no romperse bajo presión. Sin adornos. Sin motivación de conferencia.</p>
+
+        <div class="authority-modules">
+          <div class="module-item">
+            <span class="module-num">I</span>
+            <div class="module-text">
+              <strong>Fundamentos quirúrgicos</strong>
+              <span>El mapa exacto del mercado. Sin jerga innecesaria. Sin semanas de teoría que nunca vas a usar.</span>
+            </div>
+          </div>
+          <div class="module-item">
+            <span class="module-num">II</span>
+            <div class="module-text">
+              <strong>El sistema de extracción</strong>
+              <span>Las estrategias exactas que Luis opera hoy. Documentadas. Reproducibles. Auditables.</span>
+            </div>
+          </div>
+          <div class="module-item">
+            <span class="module-num">III</span>
+            <div class="module-text">
+              <strong>Gestión de capital bajo presión</strong>
+              <span>La parte que nadie enseña: cómo operar sin que el mercado te destruya emocionalmente.</span>
+            </div>
+          </div>
+          <div class="module-item">
+            <span class="module-num">IV</span>
+            <div class="module-text">
+              <strong>Construcción del ecosistema</strong>
+              <span>Cómo estructurar tu capital para que este sistema opere en paralelo a tu vida actual.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER -->
+  <section class="filter">
+    <div class="section-rule">
+      <span class="section-rule-line"></span>
+      <span class="section-label" style="margin-bottom:0">Filtro de descalificación</span>
+    </div>
+    <h2 style="font-family:'IM Fell English',serif; font-size:clamp(1.4rem,3vw,2rem); color:#D0CCC4; font-weight:400; max-width:560px; line-height:1.3; margin:0;">Esto no es para todo el mundo. Y no lo decimos por marketing.</h2>
+
+    <div class="filter-grid">
+      <div class="filter-col-not">
+        <span class="filter-col-label">Esto no es para ti si...</span>
+        <ul class="filter-list">
+          <li><i class="ti ti-x filter-icon-no" aria-hidden="true"></i>Buscas hacerte rico en 30 días</li>
+          <li><i class="ti ti-x filter-icon-no" aria-hidden="true"></i>No tienes capital para invertir responsablemente</li>
+          <li><i class="ti ti-x filter-icon-no" aria-hidden="true"></i>Necesitas que alguien te motive cada semana</li>
+          <li><i class="ti ti-x filter-icon-no" aria-hidden="true"></i>Quieres señales que te digan qué hacer sin entender por qué</li>
+          <li><i class="ti ti-x filter-icon-no" aria-hidden="true"></i>Eres impulsivo con el dinero bajo presión</li>
+          <li><i class="ti ti-x filter-icon-no" aria-hidden="true"></i>No puedes comprometerte con el proceso por al menos 90 días</li>
+        </ul>
+      </div>
+      <div class="filter-col-yes">
+        <span class="filter-col-label">Esto es para ti si...</span>
+        <ul class="filter-list">
+          <li><i class="ti ti-check filter-icon-yes" aria-hidden="true"></i>Tienes ingresos estables pero quieres romper la dependencia de ellos</li>
+          <li><i class="ti ti-check filter-icon-yes" aria-hidden="true"></i>Entiendes que esto es una habilidad, no una apuesta</li>
+          <li><i class="ti ti-check filter-icon-yes" aria-hidden="true"></i>Puedes operar con disciplina sin supervisión constante</li>
+          <li><i class="ti ti-check filter-icon-yes" aria-hidden="true"></i>Buscas autonomía y tranquilidad, no adrenalina</li>
+          <li><i class="ti ti-check filter-icon-yes" aria-hidden="true"></i>Tienes capital disponible que no necesitas en los próximos 12 meses</li>
+          <li><i class="ti ti-check filter-icon-yes" aria-hidden="true"></i>Ya tomaste decisiones difíciles antes y las ejecutaste</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="filter-statement">
+      Las plazas de mentoría privada son contadas por diseño, no por escasez artificial. Cada cliente recibe acceso directo. Eso tiene un límite físico.
+    </p>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="apply">
+    <p class="final-cta-pre">Siguiente paso</p>
+    <h2 class="final-headline">¿Estás listo para dejar<br>de pedalear?</h2>
+    <p class="final-sub">
+      El proceso es simple y deliberadamente frío: una presentación privada, una llamada de calificación, y si hay fit — empezamos.
+    </p>
+    <div class="final-cta-group">
+      <a class="cta-btn" href="https://luisfelizcaballero.com" target="_blank" style="font-size:12px; padding:1.1rem 3rem;">Ver la presentación privada</a>
+      <p class="final-disclaimer">
+        No hay pitch de ventas. No hay presión. Si no hay fit, se lo decimos directamente. Así operamos.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span class="footer-copy">© Luis Feliz Caballero 2026</span>
+    <span class="footer-disclaimer">El contenido es completamente educativo. Los resultados pueden variar. El trading implica riesgo de pérdida de capital.</span>
+  </footer>
+
+</div>

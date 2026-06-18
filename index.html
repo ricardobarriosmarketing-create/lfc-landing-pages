@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentación de Embudos | Luis Feliz Caballero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0A0A0A;
+      color: #F0EDE6;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hub-container {
+      max-width: 860px;
+      padding: 4rem 2rem;
+      text-align: center;
+      width: 100%;
+    }
+    .hub-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .hub-title {
+      font-family: 'IM Fell English', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: #E0DDD6;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .hub-title em {
+      color: #C8A96E;
+      font-style: italic;
+    }
+    .hub-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: #888;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 4rem;
+    }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      text-align: left;
+    }
+    .hub-card {
+      background-color: #060606;
+      border: 0.5px solid #1a1a1a;
+      padding: 2.5rem 2rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+    .hub-card:hover {
+      border-color: #C8A96E;
+      background-color: #0d0b08;
+      transform: translateY(-3px);
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: #F0EDE6;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+    .card-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+    .card-action {
+      font-size: 10px;
+      font-weight: 600;
+      color: #C8A96E;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-top: 0.5px solid #1a1a1a;
+      padding-top: 1.5rem;
+      transition: border-color 0.25s ease;
+    }
+    .hub-card:hover .card-action {
+      border-color: #2a1f0f;
+    }
+
+    @media (max-width: 768px) {
+      .hub-grid { grid-template-columns: 1fr; }
+      .hub-container { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hub-container">
+    <span class="hub-eyebrow">Panel de Control Interno</span>
+    <h1 class="hub-title">Presentación de Embudos<br><em>Luis Feliz Caballero</em></h1>
+    <p class="hub-desc">
+      A continuación se presentan las 4 variaciones del embudo de ventas High-Ticket. Cada propuesta está diseñada para anclar el valor del $100K Roadmap Forex Domination. Selecciona una opción para previsualizar el código en vivo.
+    </p>
+
+    <div class="hub-grid">
+      <!-- BOTÓN 1 -->
+      <a href="propuesta-de-landing-page.html" class="hub-card">
+        <span class="card-title">Propuesta 01</span>
+        <span class="card-desc">Ángulo principal. Enfoque agresivo atacando la "cárcel de cristal" del ejecutivo y el espejo psicológico.</span>
+        <span class="card-action">Ver Landing Page →</span>
+      </a>
+
+      <!-- BOTÓN 2 -->
+      <a href="propuesta-de-landing-page-2.html" class="hub-card">
+        <span class="card-title">Propuesta 02</span>
+        <span class="card-desc">Variación narrativa enfocada en la autoridad técnica, la gestión de capital y el mecanismo de extracción.</span>
+        <span class="card-action">Ver Landing Page →</span>
+      </a>
+
+      <!-- BOTÓN 3 -->
+      <a href="propuesta-de-landing-page-3.html" class="hub-card">
+        <span class="card-title">Propuesta 03</span>
+        <span class="card-desc">Arquitectura directa diseñada para inversores que buscan autonomía absoluta sin "motivación".</span>
+        <span class="card-action">Ver Landing Page →</span>
+      </a>
+
+      <!-- BOTÓN 4 -->
+      <a href="propuesta-de-landing-page-4.html" class="hub-card">
+        <span class="card-title">Propuesta 04</span>
+        <span class="card-desc">Variación estructurada para resaltar el radar anti-gurú, el escepticismo y los datos verificables.</span>
+        <span class="card-action">Ver Landing Page →</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
